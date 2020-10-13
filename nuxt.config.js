@@ -60,7 +60,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: development ? 'http://localhost:8000/api/v1/' : 'https://locuss-backend.herokuapp.com/api/v1/'
+    baseURL: process.env.NODE_ENV !== 'production' ? 'http://localhost:8000/api/v1/' : 'https://locuss-backend.herokuapp.com/api/v1/'
   },
   /*
   ** Build configuration
