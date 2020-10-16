@@ -1,5 +1,7 @@
 # locuss-frontend
 
+The website mockup is available in [Figma](https://www.figma.com/file/azKsMb5yiKWR6NehunnfgK/Locuss?node-id=0%3A1)
+
 ## Build Setup
 
 ```bash
