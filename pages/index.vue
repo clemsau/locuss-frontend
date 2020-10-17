@@ -1,36 +1,41 @@
 <template>
-  <div>
-    <div v-if="$store.state.auth">
-      <p>
-        You are authenticated. You can see the
-        <NuxtLink to="/secret">
-          secret page
-        </NuxtLink>!
-      </p>
-      <button @click="logout">
-        Logout
-      </button>
+  <div class="container">
+    <div>
+      <h1 class="title">
+        locuss-frontend
+      </h1>
+      <div v-if="$auth.loggedIn">
+        {{ $auth.user.email }}
+        <v-btn text>Logout</v-btn>
+      </div>
+      <div v-else>
+        <v-btn text to="/login">Login</v-btn>
+        <v-btn text to="/register">Register</v-btn>    
+      </div>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Documentation
+        </a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
+        >
+          GitHub
+        </a>
+      </div>
     </div>
-    <p v-else>
-      Please
-      <NuxtLink to="/login">
-        login
-      </NuxtLink>.
-    </p>
   </div>
 </template>
 
 <script>
-const Cookie = process.client ? require('js-cookie') : undefined
-
-export default {
-  methods: {
-    logout () {
-      Cookie.remove('auth')
-      this.$store.commit('setAuth', null)
-    }
-  }
-}
+export default {}
 </script>
 
 <style>
