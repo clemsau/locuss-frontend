@@ -6,7 +6,7 @@
       </h1>
       <div v-if="$auth.loggedIn">
         {{ $auth.user.email }}
-        <v-btn text>Logout</v-btn>
+        <v-btn text @click="$auth.logout()">Logout</v-btn>
       </div>
       <div v-else>
         <v-btn text to="/login">Login</v-btn>
